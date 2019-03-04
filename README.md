@@ -11,15 +11,15 @@ The data is split in different ways for training, development and testing. The f
 Files in input directory:
 
 
-1.**AJ-classification.tsv**: Contains all the deleted comments from AlJazeera dataset and their corresponding labels.
-2.**AJ-train.tsv**: contains **19692** instances from AJ-classification.tsv
-3.**AJ-dev.tsv**: contains **4000** instances from AJ-classification.tsv from the remaining instances
-4.**AJ-test.tsv**: contains **8000** remaining instances from AJ-classification
+1. **AJ-classification.tsv**: Contains all the deleted comments from AlJazeera dataset and their corresponding labels.
+2. **AJ-train.tsv**: contains **19692** instances from AJ-classification.tsv
+3. **AJ-dev.tsv**: contains **4000** instances from AJ-classification.tsv from the remaining instances
+4. **AJ-test.tsv**: contains **8000** remaining instances from AJ-classification
 
-5.**tweet-classification.tsv**: Contains all the deleted comments from Twitter dataset and their corresponding labels.
-6.**tweet-train.tsv**: contains **800** instances from tweet-classification.tsv
-7.**tweet-dev.tsv**: contains **100** instances from tweet-classification.tsv from the remaining instances
-8.**tweet-test.tsv**: contains **200** remaining instances tweet-classification.tsv
+5. **tweet-classification.tsv**: Contains all the deleted comments from Twitter dataset and their corresponding labels.
+6. **tweet-train.tsv**: contains **800** instances from tweet-classification.tsv
+7. **tweet-dev.tsv**: contains **100** instances from tweet-classification.tsv from the remaining instances
+8. **tweet-test.tsv**: contains **200** remaining instances tweet-classification.tsv
 
 9.**all_data.tsv**: concat of AJ-classification.tsv and tweet-classification.tsv
 10.**joint-train.tsv** : concat of AJ-train.tsv and tweet-train.tsv
@@ -67,7 +67,7 @@ Levels can be 0,-1,-2 corresponding to no violence, offensive and obscene respec
 example Usage:    
 **python3 violence-detection-train.py  input/tweet-train.tsv 2**
 
-This will create the corresponding SVM and MNB models and corresponding vectorizers in the directory **/models**
+This will create the corresponding SVM and MNB models and corresponding vectorizers for word bigram in the directory **/models**
 
 
 ### Evaluating
