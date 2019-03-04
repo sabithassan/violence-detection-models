@@ -4,9 +4,7 @@ import numpy as np
 import dill as pickled
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.preprocessing import  Normalizer
 from sklearn.svm import LinearSVC
-from sklearn.pipeline import FeatureUnion
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score, confusion_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer
 

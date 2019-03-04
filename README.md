@@ -26,6 +26,12 @@ Files in input directory:
 
 models can be trained and evaluated on combination of these different datasets
 
+## required libraries
+
+For training and evaluating the classifiers, following libraries are needed:
+numpy, pandas, scikit-learn and dill
+
+run pip install >library< to install these libraries
 
 ## Models
 
@@ -48,9 +54,9 @@ The code provided trains and evaluates Multinomial Naive Bayes and Linear SVM cl
 
 To train classifiers run:
 
-python3 violence-detection-train.py  <input-file> <n>
+python3 violence-detection-train.py  >input-file< >n<
 
-<input-file> is the training file. input-file should contain three tab separated columns, first column can be anything
+>input-file< is the training file. input-file should contain three tab separated columns, first column can be anything
 (could contain ID for example) second column contains the header "text" in first row, followed by the arabic texts, 
 third column contains the header "level" followed  by level of violence for the corresponding text in second column.
 Levels can be 0,-1,-2 corresponding to no violence, offensive and obscene respectively
