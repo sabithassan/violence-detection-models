@@ -14,7 +14,7 @@ def print_usage():
     
     print (
     '''Usage:
-    python3 violence-detection-train.py  <input-file> <model-file>
+    python3 violence-detection-evaluate.py  <input-file> <model-file>
 
     <input-file> is the training file. input-file should contain three tab separated columns, first column can be anything
     (could contain ID for example) second column contains the header "text" in first row, followed by the arabic texts, 
