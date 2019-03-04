@@ -21,8 +21,8 @@ Files in input directory:
 7. **tweet-dev.tsv**: contains **100** instances from tweet-classification.tsv from the remaining instances
 8. **tweet-test.tsv**: contains **200** remaining instances tweet-classification.tsv
 
-9.**all_data.tsv**: concat of AJ-classification.tsv and tweet-classification.tsv
-10.**joint-train.tsv** : concat of AJ-train.tsv and tweet-train.tsv
+9. **all_data.tsv**: concat of AJ-classification.tsv and tweet-classification.tsv
+10. **joint-train.tsv** : concat of AJ-train.tsv and tweet-train.tsv
 
 models can be trained and evaluated on combination of these different datasets
 
