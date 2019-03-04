@@ -31,7 +31,7 @@ models can be trained and evaluated on combination of these different datasets
 For training and evaluating the classifiers, following libraries are needed:
 numpy, pandas, scikit-learn and dill
 
-run pip install (library) to install these libraries
+run **pip install (library)** to install these libraries
 
 ## Models
 
@@ -54,7 +54,7 @@ The code provided trains and evaluates Multinomial Naive Bayes and Linear SVM cl
 
 To train classifiers run:
 
-python3 violence-detection-train.py  (input-file) (n)
+**python3 violence-detection-train.py  (input-file) (n)**
 
 (input-file) is the training file. input-file should contain three tab separated columns, first column can be anything
 (could contain ID for example) second column contains the header "text" in first row, followed by the arabic texts, 
@@ -65,7 +65,7 @@ Levels can be 0,-1,-2 corresponding to no violence, offensive and obscene respec
 (n) must be greater than 0
     
 example Usage:    
-python3 violence-detection-train.py  input/tweet-train.tsv 2
+**python3 violence-detection-train.py  input/tweet-train.tsv 2**
 
 This will create the corresponding SVM and MNB models and corresponding vectorizers in the directory **/models**
 
@@ -74,18 +74,18 @@ This will create the corresponding SVM and MNB models and corresponding vectoriz
 
 To evaluate a trained model, run:
 
- python violence-detection-train.py  <input-file> <model-file>
+**python3 violence-detection-evaluate.py  (input-file) (model-file)**
 
-<input-file> is the testing file. input-file should contain three tab separated columns, first column can be anything
+(input-file) is the testing file. input-file should contain three tab separated columns, first column can be anything
 (could contain ID for example) second column contains the header "text" in first row, followed by the arabic texts, 
 third column contains the header "level" followed  by level of violence for the corresponding text in second column.
 Levels can be 0,-1,-2 corresponding to no violence, offensive and obscene respectively
 
 
-<model-file> is the previously trained model. It should contain trained classifier and vectorizer.
+(model-file) is the previously trained model. It should contain trained classifier and vectorizer.
     
 example Usage:    
-python3 violence-detection-evaluate.py  input/tweet-test.tsv models/MNB_model_word_2-gram.pckl
+**python3 violence-detection-evaluate.py  input/tweet-test.tsv models/MNB_model_word_2-gram.pckl**
 
 This will print accuracy, f1 score, precision, recall and confusion matrix.
 
