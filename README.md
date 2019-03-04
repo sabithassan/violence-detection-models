@@ -11,18 +11,18 @@ The data is split in different ways for training, development and testing. The f
 Files in input directory:
 
 
-**AJ-classification.tsv**: Contains all the deleted comments from AlJazeera dataset and their corresponding labels.
-**AJ-train.tsv**: contains **19692** instances from AJ-classification.tsv
-**AJ-dev.tsv**: contains **4000** instances from AJ-classification.tsv from the remaining instances
-**AJ-test.tsv**: contains **8000** remaining instances from AJ-classification
+1.**AJ-classification.tsv**: Contains all the deleted comments from AlJazeera dataset and their corresponding labels.
+2.**AJ-train.tsv**: contains **19692** instances from AJ-classification.tsv
+3.**AJ-dev.tsv**: contains **4000** instances from AJ-classification.tsv from the remaining instances
+4.**AJ-test.tsv**: contains **8000** remaining instances from AJ-classification
 
-**tweet-classification.tsv**: Contains all the deleted comments from Twitter dataset and their corresponding labels.
-**tweet-train.tsv**: contains **800** instances from tweet-classification.tsv
-**tweet-dev.tsv**: contains **100** instances from tweet-classification.tsv from the remaining instances
-**tweet-test.tsv**: contains **200** remaining instances tweet-classification.tsv
+5.**tweet-classification.tsv**: Contains all the deleted comments from Twitter dataset and their corresponding labels.
+6.**tweet-train.tsv**: contains **800** instances from tweet-classification.tsv
+7.**tweet-dev.tsv**: contains **100** instances from tweet-classification.tsv from the remaining instances
+8.**tweet-test.tsv**: contains **200** remaining instances tweet-classification.tsv
 
-**all_data.tsv**: concat of AJ-classification.tsv and tweet-classification.tsv
-**joint-train.tsv** : concat of AJ-train.tsv and tweet-train.tsv
+9.**all_data.tsv**: concat of AJ-classification.tsv and tweet-classification.tsv
+10.**joint-train.tsv** : concat of AJ-train.tsv and tweet-train.tsv
 
 models can be trained and evaluated on combination of these different datasets
 
@@ -31,7 +31,7 @@ models can be trained and evaluated on combination of these different datasets
 For training and evaluating the classifiers, following libraries are needed:
 numpy, pandas, scikit-learn and dill
 
-run pip install >library< to install these libraries
+run pip install (library) to install these libraries
 
 ## Models
 
@@ -54,15 +54,15 @@ The code provided trains and evaluates Multinomial Naive Bayes and Linear SVM cl
 
 To train classifiers run:
 
-python3 violence-detection-train.py  >input-file< >n<
+python3 violence-detection-train.py  (input-file) (n)
 
->input-file< is the training file. input-file should contain three tab separated columns, first column can be anything
+(input-file) is the training file. input-file should contain three tab separated columns, first column can be anything
 (could contain ID for example) second column contains the header "text" in first row, followed by the arabic texts, 
 third column contains the header "level" followed  by level of violence for the corresponding text in second column.
 Levels can be 0,-1,-2 corresponding to no violence, offensive and obscene respectively
 
-<n> denotes n for word -n grams. Setting n = 1 will create word unigram, setting n = 2 will create word bigram etc.
-<n> must be greater than 0
+(n) denotes n for word -n grams. Setting n = 1 will create word unigram, setting n = 2 will create word bigram etc.
+(n) must be greater than 0
     
 example Usage:    
 python3 violence-detection-train.py  input/tweet-train.tsv 2
