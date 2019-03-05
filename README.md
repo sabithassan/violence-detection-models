@@ -22,7 +22,7 @@ Files in input directory:
 8. **tweet-test.tsv**: contains **200** remaining instances tweet-classification.tsv
 
 9. **all_data.tsv**: concat of AJ-classification.tsv and tweet-classification.tsv
-10. **joint-train.tsv** : concat of AJ-train.tsv and tweet-train.tsv
+10. **joint-train.tsv** : contains tweet-train.tsv and some instances of AJ-train.tsv
 
 models can be trained and evaluated on combination of these different datasets
 
@@ -41,20 +41,24 @@ There are four trained models:
 2. Linear SVM with word bigram features
 3. Multinomial Bayes with word unigram features
 4. Multinomial Bayes with word bigram features
+5. Linear SVM with char  3-gram features
+6. Linear SVM with char 5-gram features
+7. Multinomial Bayes with char 3-gram features
+8. Multinomial Bayes with char 5-gram features
 
 To use these models directly, make sure to have python 3.6.4 and scikit-learn 0.19.1 installed. Other versions may cause problems with the pickled file.
 Otherwise, please refer to the Training section to train the models locally.
 
 ## Training and evaluating models
 
-The code provided trains and evaluates Multinomial Naive Bayes and Linear SVM classifier on word n-gram features. n can be specified by user
+The code provided trains and evaluates Multinomial Naive Bayes and Linear SVM classifier on word or character n-gram features. n can be specified by user
 
 
 ### Training
 
-To train classifiers run:
+To train **word** n-gram based classifiers run:
 
-**python3 violence-detection-train.py  (input-file) (n)**
+**python3 violence-detection-word-train.py  (input-file) (n)**
 
 (input-file) is the training file. input-file should contain three tab separated columns, first column can be anything
 (could contain ID for example) second column contains the header "text" in first row, followed by the arabic texts, 
@@ -65,9 +69,15 @@ Levels can be 0,-1,-2 corresponding to no violence, offensive and obscene respec
 (n) must be greater than 0
     
 example Usage:    
-**python3 violence-detection-train.py  input/tweet-train.tsv 2**
+**python3 violence-detection-word-train.py  input/tweet-train.tsv 2**
 
 This will create the corresponding SVM and MNB models and corresponding vectorizers for word bigram in the directory **/models**
+
+To train **char** n-gram based classifiers run:
+
+**python3 violence-detection-char-train.py  (input-file) (n)**
+
+Usage is similar to word n-gram
 
 
 ### Evaluating
